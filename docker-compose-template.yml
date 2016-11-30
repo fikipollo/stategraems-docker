@@ -1,0 +1,32 @@
+version: '2'
+services:
+
+    §§INSTANCE-stategraems:
+      image: stategraems
+      container_name: §§INSTANCE-stategraems
+      links:
+        - §§INSTANCE-stategraems-mysql:stategraems-mysql
+      depends_on:
+        - §§INSTANCE-stategraems-mysql
+      volumes_from:
+        - §§INSTANCE-stategraems-data
+      ports:
+        - "§§PORT:8080"
+
+    §§INSTANCE-stategraems-mysql:
+      image: mysql
+      container_name: §§INSTANCE-stategraems-mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=thispasswordisneverusedeveninsidethecontainer
+      depends_on:
+        - §§INSTANCE-stategraems-data
+      volumes_from:
+        - §§INSTANCE-stategraems-data
+
+    §§INSTANCE-stategraems-data:
+      image: busybox
+      container_name: §§INSTANCE-stategraems-data
+      volumes:
+        - §§FOLDER/var/lib/mysql:/var/lib/mysql
+        - §§FOLDER/data:/data
+

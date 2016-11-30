@@ -2,7 +2,7 @@ version: '2'
 services:
 
     §§INSTANCE-stategraems:
-      image: stategraems
+      image: fikipollo/stategraems
       container_name: §§INSTANCE-stategraems
       links:
         - §§INSTANCE-stategraems-mysql:stategraems-mysql
@@ -17,7 +17,7 @@ services:
       image: mysql
       container_name: §§INSTANCE-stategraems-mysql
       environment:
-        - MYSQL_ROOT_PASSWORD=thispasswordisneverusedeveninsidethecontainer
+        - MYSQL_ROOT_PASSWORD=§§MYSQL_ROOT_PASSWORD
       depends_on:
         - §§INSTANCE-stategraems-data
       volumes_from:

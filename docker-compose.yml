@@ -5,14 +5,22 @@ services:
       image: fikipollo/stategraems
       container_name: instance1-stategraems
       environment:
-        - EMS_ADMIN_USER=emsadminuser@email.com
-        - EMS_ADMIN_PASSWORD=admin
-        - MYSQL_ROOT_USER=root
+        #Use this variables to change the default values for the installation.
+        #Uncomment the optional variables and change the values is you want to use them, otherwise default values will be used.
+        #The email and password for the admin account. Can be changed later at the application (OPTIONAL).
+        #- EMS_ADMIN_USER=emsadminuser@email.com
+        #- EMS_ADMIN_PASSWORD=admin
+        #The root user for the MySQL instance (OPTIONAL).
+        #- MYSQL_ROOT_USER=root
+        #The password for the MySQL root user, must be the same for the MySQL container.
         - MYSQL_ROOT_PASSWORD=supersecret
-        - MYSQL_DATABASE_NAME=STATegraDB
-        - MYSQL_HOST=stategraems-mysql
-        - MYSQL_EMS_USER=emsuser
-        - MYSQL_EMS_PASS=superdupersecret
+        #The name for the MySQL database (OPTIONAL).
+        #- MYSQL_DATABASE_NAME=STATegraDB
+        #The name for the MySQL container, must be the same for the MySQL container or the link (OPTIONAL).
+        #- MYSQL_HOST=stategraems-mysql
+        #The name and password for the MySQL user that will be used for administrate the EMS databases (OPTIONAL).
+        #- MYSQL_EMS_USER=emsuser
+        #- MYSQL_EMS_PASS=superdupersecret
       links:
         - instance1-stategraems-mysql:stategraems-mysql
       depends_on:
@@ -26,6 +34,7 @@ services:
       image: mysql
       container_name: instance1-stategraems-mysql
       environment:
+        #The password for the MySQL root user, must be the same for the STATegra EMS container.
         - MYSQL_ROOT_PASSWORD=supersecret
       depends_on:
         - instance1-stategraems-data
@@ -36,5 +45,6 @@ services:
       image: busybox
       container_name: instance1-stategraems-data
       volumes:
+        #We use volumes for persistent storage of the EMS data. Choose the directories where the data should be stored.
         - /home/foo/instance1/var/lib/mysql:/var/lib/mysql
         - /home/foo/instance1/data:/data

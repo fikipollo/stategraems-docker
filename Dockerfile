@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build Galaxy container images
+# Dockerfile to build STATegra EMS container images
 # Based on tomcat
 ############################################################
 
@@ -7,10 +7,10 @@
 FROM tomcat
 
 # File Author / Maintainer
-MAINTAINER Rafael Hernandez <rafahd87@gmail.com>
+MAINTAINER Rafa Hernandez <rafahd87@gmail.com>
 
 ################## BEGIN INSTALLATION ######################
-#Install mysql client for connecting to the mysql component
+#Install MySQL client for connecting to the MySQL component
 RUN apt-get update && apt-get install -y mysql-client  \
     && wget https://github.com/fikipollo/stategraems/archive/feature/angular.zip -O /tmp/ems.zip \
     && mkdir /tmp/ems/ \

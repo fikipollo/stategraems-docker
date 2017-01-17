@@ -9,7 +9,7 @@ services:
         #Uncomment the optional variables and change the values is you want to use them, otherwise default values will be used.
         #The email and password for the admin account. Can be changed later at the application (OPTIONAL).
         #- EMS_ADMIN_USER=emsadminuser@email.com
-        #- EMS_ADMIN_PASSWORD=admin
+        #- EMS_ADMIN_PASSWORD=emsadminuser@email.com
         #The root user for the MySQL instance (OPTIONAL).
         #- MYSQL_ROOT_USER=root
         #The password for the MySQL root user, must be the same for the MySQL container.

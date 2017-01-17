@@ -52,7 +52,7 @@ The STATegra EMS docker accepts the following variables that modify the **INSTAL
 Note that all the values are optional but the **MYSQL_ROOT_PASSWORD** which must be the same password for the MySQL container.
 
 - **EMS_ADMIN_USER**, the email for the admin account (default value is *emsadminuser@email.com*).
-- **EMS_ADMIN_PASSWORD**, the password for the admin account (default value is *admin*).
+- **EMS_ADMIN_PASSWORD**, the password for the admin account (default value is *emsadminuser@email.com*).
 - **MYSQL_ROOT_USER**, the root user for the MySQL instance (default value is *root*).
 - **MYSQL_ROOT_PASSWORD**, the password for the MySQL root user (**mandatory**).
 - **MYSQL_DATABASE_NAME**, the name for the MySQL database (default value is *STATegraDB*).

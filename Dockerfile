@@ -7,7 +7,7 @@
 FROM tomcat
 
 # File Author / Maintainer
-MAINTAINER Rafa Hernandez <rafahd87@gmail.com>
+MAINTAINER Rafa Hernandez <https://github.com/fikipollo>
 
 ################## BEGIN INSTALLATION ######################
 #Install MySQL client for connecting to the MySQL component

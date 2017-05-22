@@ -2,7 +2,7 @@ version: '2'
 services:
 
     instance1-stategraems:
-      image: fikipollo/stategraems
+      image: fikipollo/stategraems:devel
       container_name: instance1-stategraems
       environment:
         #Use this variables to change the default values for the installation.

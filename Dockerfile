@@ -13,7 +13,7 @@ MAINTAINER Rafa Hernandez <https://github.com/fikipollo>
 # Install MySQL client for connecting to the MySQL component
 RUN apt-get update && apt-get install -y mysql-client
 # Download the last image of STATegra EMS
-RUN wget https://raw.githubusercontent.com/fikipollo/stategraems/release/last/dist/stategraems.war -O /tmp/stategraems.war
+RUN wget https://github.com/fikipollo/stategraems/raw/develop/dist/stategraems.war -O /tmp/stategraems.war
 # Install the image and set up the system
 RUN cp /tmp/stategraems.war /usr/local/tomcat/webapps/ \
     && rm /tmp/stategraems.war \

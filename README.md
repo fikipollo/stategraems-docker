@@ -2,10 +2,12 @@ STATegra EMS Docker Image
 ===================
 The [STATegra EMS](https://github.com/fikipollo/stategraems) [Docker](http://www.docker.io) Image is an easy distributable full-fledged STATegra EMS installation.
 
-STATegra EMS is an *Experiment Management System* (EMS) for omics experiments that supports different types of sequencing-based assays, proteomics and metabolomics data.
-STATegra EMS was developed as part of the [STATegra Project](http://www.stategra.eu), which has received funding from the European Union’s FP7 research and innovation programme.
+STATegra EMS is an *Experiment Management System* (EMS) for omics experiments that supports different types of sequencing-based assays, proteomics and metabolomics data. STATegra EMS was developed as part of the [STATegra Project](http://www.stategra.eu), which has received funding from the European Union’s FP7 research and innovation programme.
 
-# Build the image <a name="install" />
+- Citation:
+> Hernández-de-Diego R, Boix-Chova N, Gómez-Cabrero D, Tegner J, Abugessaisa I, and Conesa A. STATegra EMS: an Experiment Management System for complex next-generation omics experiments. BMC Syst Biol. 2014;8 Suppl 2:S9. doi: 10.1186/1752-0509-8-S2-S9.
+
+# Build the image
 The docker image for STATegra EMS can be found in the [docker hub](https://hub.docker.com/r/fikipollo/stategraems/). However, you can rebuild is manually by running **docker build**.
 
 ```sh
@@ -13,8 +15,15 @@ sudo docker build -t stategraems .
 ```
 Note that the current working directory must contain the Dockerfile file.
 
-# Running the STATegra EMS <a name="run" />
+## Running the Container
 The recommended way for running your STATegra EMS docker is using the provided **docker-compose** script that resolves the dependencies and make easier to customize your instance. Alternatively you can run the docker manually. In both cases the first time that you access to your STATegra EMS instance the system will be auto-installed. You can easily customize the installation by changing some system variables, you can find the list of available variables in the next section.
+
+## Quickstart
+This procedure starts STATegra EMS in a standard virtualised environment.
+
+- Install [docker](https://docs.docker.com/engine/installation/) for your system if not previously done.
+- `docker run -it -p 8080:80 fikipollo/stategraems`
+- STATegra EMS will be available at [http://localhost:8080/](http://localhost:8080/)
 
 ## Using the docker-compose file
 Launching your STATegra EMS docker is really easy using docker-compose. Just download the *docker-compose.yml* file and customize the content according to your needs. There are few settings that should be change in the file, follow the instructions in the file to configure your container.
@@ -26,7 +35,7 @@ Using the *-d* flag you can launch the containers in background.
 
 In case you do not have the Container stored locally, docker will download it for you.
 
-# Install the image <a name="install" />
+## Run manually
 You can run manually your containers using the following commands:
 
 ```sh
@@ -65,3 +74,9 @@ For an interactive session, you can execute :
 ```sh
 sudo docker exec -it stategraems-tomcat bash
 ```
+
+# First configuration for STATegra EMS
+The first time that you access to your STATegra EMS instance you will need to configure some of the main settings.
+
+# Version log
+  - v0.8 March 2017: First version of the docker.

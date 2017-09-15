@@ -14,8 +14,8 @@ MAINTAINER Rafa Hernandez <https://github.com/fikipollo>
 RUN apt-get update && apt-get install -y mysql-client
 
 # Download the lastest image of STATegra EMS
-#RUN wget -O /tmp/galaksio.zip https://github.com/fikipollo/stategraems/archive/develop.zip \
-RUN wget -O /tmp/stategraems.zip https://github.com/fikipollo/stategraems/archive/v0.8.zip \
+RUN wget -O /tmp/galaksio.zip https://github.com/fikipollo/stategraems/archive/develop.zip \
+#RUN wget -O /tmp/stategraems.zip https://github.com/fikipollo/stategraems/archive/v0.8.zip \
     && unzip /tmp/stategraems.zip -d /tmp/stategraems \
     && cp /tmp/stategraems/*/dist/stategraems.war /usr/local/tomcat/webapps/ \
     && rm -r /tmp/stategraems \
